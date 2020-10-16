@@ -6,7 +6,7 @@
 #' @param tissue_pos File of the possition in the tissue
 #' @inherit verbose params
 #' @return No return but saves a json file to workdir
-#' @example 
+#' @examples 
 #' 
 #' #Get Spata Object
 #' library(SPATA)

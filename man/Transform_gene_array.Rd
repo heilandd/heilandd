@@ -19,6 +19,27 @@ No return but saves a json file to workdir
 \description{
 Test
 }
+\examples{
+
+#Get Spata Object
+library(SPATA)
+input_paths = c("~/Desktop/SpatialTranscriptomics/Visium/Visium/275_T")
+sample_names = c("275_T")
+
+spata_obj <- initiateSpataObject_10X(input_paths=input_paths, 
+                                    sample_names=sample_names,
+                                    object_name="Obj_275_T",
+                                    output_path = getwd())
+                                    
+tissue_pos=read.csv(paste0(input_paths,"/outs/spatial/tissue_positions_list.csv"), header=F)
+names(tissue_pos)=c("barcodes", "tissue", "x_rank", "y_rank", "x", "y")
+tissue_pos$barcodes=paste0(tissue_pos$barcodes, "_", sample_names) 
+
+#Tranform data to list 
+Transform_gene_array(object=spata_obj, of_sample=sample_names, tissue_pos)
+
+
+}
 \author{
 Dieter Henrik Heiland
 }
