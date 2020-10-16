@@ -49,7 +49,7 @@ Transform_gene_array=function(object, of_sample, tissue_pos){
   gene_array_list=pbapply::pblapply( 1:dim[1], function(i){
     gene_inp=genes[i]
     step2<-step1 %>% dplyr::select(x_rank,y_rank, !!sym(gene_inp))
-    mat1=dplyr::pivot_wider(step2, names_from = y_rank, values_from = !!sym(gene_inp)) %>% as.data.frame()
+    mat1=tidyr::pivot_wider(step2, names_from = y_rank, values_from = !!sym(gene_inp)) %>% as.data.frame()
     base::rownames(mat1)=mat1$x_rank ; mat1$x_rank = NULL ; mat1=base::as.matrix(mat1)
     mat1=mat1[base::order(as.numeric(rownames(mat1))), base::order(as.numeric(colnames(mat1)))]
     base::return(mat1)
