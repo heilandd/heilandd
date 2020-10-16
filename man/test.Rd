@@ -12,3 +12,6 @@ A spata-object.
 \description{
 Test
 }
+\author{
+Dieter Henrik Heiland
+}
