@@ -6,17 +6,13 @@
 #' @param tissue_pos File of the possition in the tissue
 #' @inherit verbose params
 #' @return No return but saves a json file to workdir
-#' 
-#' 
-#' 
-#' 
 #' @example 
 #' 
 #' #Get Spata Object
 #' library(SPATA)
 #'input_paths = c("~/Desktop/SpatialTranscriptomics/Visium/Visium/275_T")
 #'sample_names = c("275_T")
-
+#'
 #'spata_obj <- initiateSpataObject_10X(input_paths=input_paths, 
 #'                                     sample_names=sample_names,
 #'                                     object_name="Obj_275_T",
