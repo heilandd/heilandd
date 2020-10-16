@@ -35,7 +35,7 @@
 
 Transform_gene_array=function(object, of_sample, tissue_pos){
   
-  dim=base::dim(exprMtr(object, of_sample))
+  dim=base::dim(SPATA::exprMtr(object, of_sample))
   genes= SPATA::getGenes(object)
   
   base::message("... get joint genes ...")
